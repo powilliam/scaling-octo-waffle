@@ -1,4 +1,4 @@
-package com.example.template.navigation
+package com.powilliam.scalingoctowaffle.navigation
 
 import androidx.navigation.NamedNavArgument
 

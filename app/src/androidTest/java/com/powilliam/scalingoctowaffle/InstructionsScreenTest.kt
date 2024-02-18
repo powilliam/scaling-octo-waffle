@@ -1,4 +1,4 @@
-package com.example.template
+package com.powilliam.scalingoctowaffle
 
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.assertCountEquals
@@ -8,8 +8,8 @@ import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.template.instructions.InstructionsScreen
-import com.example.template.theming.ApplicationTheme
+import com.powilliam.scalingoctowaffle.instructions.InstructionsScreen
+import com.powilliam.scalingoctowaffle.theming.ApplicationTheme
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.template"
+    namespace = "com.powilliam.scalingoctowaffle"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.template"
+        applicationId = "com.powilliam.scalingoctowaffle"
         minSdk = 27
         targetSdk = 34
         versionCode = 1

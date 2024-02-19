@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.powilliam.scalingoctowaffle"
+    namespace = "com.powilliam.scallingoctowaffle"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.powilliam.scalingoctowaffle"
+        applicationId = "com.powilliam.scallingoctowaffle"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
@@ -91,7 +91,12 @@ dependencies {
 
     // Tests
     testImplementation("junit:junit:4.13.2")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.46.1")
+    testImplementation("org.mockito:mockito-core:5.10.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.0")
     testImplementation("app.cash.turbine:turbine:1.0.0")
+
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
     androidTestImplementation("app.cash.turbine:turbine:1.0.0")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

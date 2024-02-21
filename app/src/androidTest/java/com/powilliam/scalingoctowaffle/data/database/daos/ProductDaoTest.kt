@@ -49,6 +49,17 @@ class ProductDaoTest {
     }
 
     @Test
+    fun itShouldBeAbleToFindProductByHref() = runTest {
+        val (job, product) = seed(database)
+
+        job.await()
+
+        val inserted = database.product().byHref(product.href)
+
+        assert(product.href == inserted.href)
+    }
+
+    @Test
     fun itShouldBeAbleToDeleteAProduct() = runTest {
         val (seedJob, product) = seed(database)
         val deleteJob = async { database.product().delete(product) }

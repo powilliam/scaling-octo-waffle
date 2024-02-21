@@ -33,6 +33,21 @@ class ProductsLocalDataSourceTest {
     }
 
     @Test
+    fun itShouldBeAbleToGetProductByHref() = runBlocking {
+        val product = Product.forTesting(name = "Something")
+
+        val dao = mock<ProductDao> {
+            onBlocking { byHref(product.href) } doReturn product
+        }
+
+        val dataSource = ProductsLocalDataSourceImpl(dao)
+
+        val result = dataSource.byHref(product.href)
+
+        assert(product == result)
+    }
+
+    @Test
     fun itShouldBeAbleToInsertAProduct() = runBlocking {
         val product = Product.forTesting(name = "Something")
 

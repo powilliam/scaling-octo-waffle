@@ -8,6 +8,7 @@ import javax.inject.Inject
 
 interface ProductsRepository {
     fun allWithPricings(): Flow<List<ProductWithPricings>>
+    suspend fun byHref(href: String): Product
     suspend fun insert(product: Product)
     suspend fun delete(product: Product)
 }
@@ -16,6 +17,8 @@ class ProductsRepositoryImpl @Inject constructor(
     private val dataSource: ProductsLocalDataSource
 ) : ProductsRepository {
     override fun allWithPricings() = dataSource.allWithPricings()
+
+    override suspend fun byHref(href: String) = dataSource.byHref(href)
 
     override suspend fun insert(product: Product) = dataSource.insert(product)
 

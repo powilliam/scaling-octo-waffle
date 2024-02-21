@@ -15,6 +15,9 @@ interface ProductDao {
     @Query("SELECT * FROM product")
     fun allWithPricings(): Flow<List<ProductWithPricings>>
 
+    @Query("SELECT * FROM product WHERE product_href = :href")
+    suspend fun byHref(href: String): Product
+
     @Insert
     suspend fun insert(product: Product)
 

@@ -18,11 +18,12 @@ import org.junit.Before
 import org.junit.Test
 
 class InsertPricingWorkerTest {
+    private lateinit var context: Context
     private lateinit var database: AppDatabase
 
     @Before
     fun setup() {
-        val context = ApplicationProvider.getApplicationContext<Context>()
+        context = ApplicationProvider.getApplicationContext<Context>()
         database = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java)
             .build()
     }
@@ -34,8 +35,7 @@ class InsertPricingWorkerTest {
     fun itShouldBeAbleToInsertAPricing() = runTest {
         val product = seed(database)
         val data = workDataOf("productId" to product.id, "price" to 3500)
-        val context = ApplicationProvider.getApplicationContext<Context>()
-        val worker = TestListenableWorkerBuilder<InsertPricingWorker>(context, inputData = data)
+        val worker = TestListenableWorkerBuilder<InsertPricingWorker>(context, data)
             .setWorkerFactory(TestInsertPricingWorkerFactory(database.pricing()))
             .build()
 

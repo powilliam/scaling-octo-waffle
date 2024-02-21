@@ -33,6 +33,22 @@ class ProductsRepositoryTest {
     }
 
     @Test
+    fun itShouldBeAbleToGetProductByHref() = runBlocking {
+        val product = Product.forTesting(name = "Something")
+
+        val dataSource = mock<ProductsLocalDataSourceImpl> {
+            onBlocking { byHref(product.href) } doReturn product
+        }
+
+        val repository = ProductsRepositoryImpl(dataSource)
+
+        val result = repository.byHref(product.href)
+
+        assert(result == product)
+    }
+
+
+    @Test
     fun itShouldBeAbleToInsertAProduct() = runBlocking {
         val product = Product.forTesting(name = "Something")
 

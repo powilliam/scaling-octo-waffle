@@ -1,0 +1,39 @@
+package com.powilliam.scalingoctowaffle
+
+import androidx.activity.ComponentActivity
+import androidx.compose.ui.test.assertCountEquals
+import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.onNodeWithText
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.powilliam.scalingoctowaffle.instructions.InstructionsScreen
+import com.powilliam.scalingoctowaffle.theming.ApplicationTheme
+import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
+
+@RunWith(AndroidJUnit4::class)
+class InstructionsScreenTest {
+    @get:Rule
+    val rule = createAndroidComposeRule<ComponentActivity>()
+
+    @Test
+    fun main() {
+        rule.setContent {
+            ApplicationTheme({ rule.activity }) {
+                InstructionsScreen()
+            }
+        }
+
+        rule.onNodeWithText("Instructions")
+            .assertExists()
+            .assertIsDisplayed()
+        rule.onNodeWithTag("listOfInstructions")
+            .assertExists()
+            .assertIsDisplayed()
+        rule.onAllNodesWithTag("instruction")
+            .assertCountEquals(4)
+    }
+}

@@ -1,4 +1,4 @@
-package com.powilliam.scalingoctowaffle.theming
+package com.powilliam.scalingoctowaffle.presentation.theming
 
 import android.content.Context
 import android.os.Build

@@ -113,8 +113,10 @@ dependencies {
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.0")
     testImplementation("app.cash.turbine:turbine:1.0.0")
 
-    androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
+    androidTestImplementation("org.mockito:mockito-android:5.10.0")
+    androidTestImplementation("org.mockito.kotlin:mockito-kotlin:5.2.0")
     androidTestImplementation("app.cash.turbine:turbine:1.0.0")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }

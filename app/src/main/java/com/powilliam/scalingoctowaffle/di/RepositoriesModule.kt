@@ -24,8 +24,10 @@ object RepositoriesModule {
 
     @Singleton
     @Provides
-    fun provideProductsRepository(dataSource: ProductsLocalDataSource): ProductsRepository =
-        ProductsRepositoryImpl(dataSource)
+    fun provideProductsRepository(
+        hyperTexts: HyperTextsRemoteDataSource,
+        products: ProductsLocalDataSource
+    ): ProductsRepository = ProductsRepositoryImpl(hyperTexts, products)
 
     @Singleton
     @Provides

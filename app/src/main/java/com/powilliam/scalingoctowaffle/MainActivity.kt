@@ -5,8 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
-import com.powilliam.scalingoctowaffle.navigation.ApplicationNavHost
-import com.powilliam.scalingoctowaffle.theming.ApplicationTheme
+import com.powilliam.scalingoctowaffle.presentation.navigation.ApplicationNavHost
+import com.powilliam.scalingoctowaffle.presentation.theming.ApplicationTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

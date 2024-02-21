@@ -5,10 +5,16 @@
       <entry key="All Tests">
         <State />
       </entry>
-      <entry key="PricingDaoTest">
+      <entry key="ProductsScreenTest">
+        <State />
+      </entry>
+      <entry key="ProductsViewModelTest">
         <State />
       </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="itShouldBeAbleToRenderCorrectly()">
         <State />
       </entry>
     </value>

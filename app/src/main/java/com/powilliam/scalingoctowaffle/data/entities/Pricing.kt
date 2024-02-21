@@ -3,6 +3,11 @@ package com.powilliam.scalingoctowaffle.data.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.text.NumberFormat
+import java.text.SimpleDateFormat
+import java.time.Instant
+import java.util.Date
+import java.util.Locale
 
 @Entity
 data class Pricing(
@@ -24,3 +29,12 @@ data class Pricing(
         )
     }
 }
+
+fun Pricing.date(): String {
+    val formatter = SimpleDateFormat("EEE, d' 'MMM yyyy", Locale.getDefault())
+    val date = Date.from(Instant.ofEpochMilli(createdAt))
+
+    return formatter.format(date)
+}
+
+fun Pricing.currency(): String = NumberFormat.getCurrencyInstance().format(inCents / 100)
